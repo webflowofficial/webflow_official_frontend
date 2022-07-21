@@ -23,15 +23,15 @@ function Navbar() {
     }
 
     return (
-        <nav className="flex h-20 bg-custom-primary-background items-center justify-between">
+        <nav className="flex h-20 bg-custom-primary-background items-center">
             <div className="logo_outside_div w-1/4 box-border">
                 <div className="box-border pl-12 md-max:pl-7">
                     <img className="w-16" src="./Images/Logo.png" alt="LOGO" />
                 </div>
             </div>
 
-            <div className="other_nav_items w-[50%] flex justify-end">
-                <div className="hidden justify-evenly w-4/6 font-sans font-normal md:flex text-custom-primary-font">
+            <div className="other_nav_items w-3/4 flex justify-end">
+                <div className="hidden justify-evenly w-[50%] min-w-[30rem] font-sans font-normal md:flex text-custom-primary-font">
                     <p className="hover:text-custom-primary-button transition-all duration-200">About</p>
                     <p className="hover:text-custom-primary-button transition-all duration-200">Experience</p>
                     <p className="hover:text-custom-primary-button transition-all duration-200">Work</p>
