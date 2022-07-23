@@ -553,28 +553,40 @@ video {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
+.right-\[-36px\] {
+  right: -36px;
+}
+
+.top-\[18px\] {
+  top: 18px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
 .top-0 {
   top: 0px;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mb-20 {
   margin-bottom: 5rem;
 }
 
-.mr-5 {
-  margin-right: 1.25rem;
-}
-
-.mr-7 {
-  margin-right: 1.75rem;
-}
-
 .box-border {
   box-sizing: border-box;
-}
-
-.inline {
-  display: inline;
 }
 
 .flex {
@@ -585,20 +597,52 @@ video {
   display: none;
 }
 
-.h-screen {
-  height: 100vh;
+.h-11 {
+  height: 2.75rem;
+}
+
+.h-\[calc\(100vh-80px\)\] {
+  height: calc(100vh - 80px);
 }
 
 .h-20 {
   height: 5rem;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .h-1\/3 {
   height: 33.333333%;
 }
 
+.min-h-\[calc\(100vh\)\] {
+  min-height: calc(100vh);
+}
+
+.min-h-\[calc\(100vh-80px\)\] {
+  min-height: calc(100vh - 80px);
+}
+
+.w-\[calc\(100vw-6px\)\] {
+  width: calc(100vw - 6px);
+}
+
 .w-screen {
   width: 100vw;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-80 {
+  width: 20rem;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-1\/4 {
@@ -609,52 +653,32 @@ video {
   width: 4rem;
 }
 
-.w-\[50\%\] {
-  width: 50%;
-}
-
-.w-4\/6 {
-  width: 66.666667%;
-}
-
-.w-full {
-  width: 100%;
-}
-
 .w-3\/4 {
   width: 75%;
 }
 
-.w-\[16\%\] {
-  width: 16%;
-}
-
-.min-w-\[16\%\] {
-  min-width: 16%;
-}
-
-.min-w-\[600px\] {
-  min-width: 600px;
-}
-
-.min-w-\[50\%\] {
-  min-width: 50%;
-}
-
-.min-w-\[38rem\] {
-  min-width: 38rem;
+.w-\[50\%\] {
+  width: 50%;
 }
 
 .min-w-\[30rem\] {
   min-width: 30rem;
 }
 
-.basis-1 {
-  flex-basis: 0.25rem;
+.resize-none {
+  resize: none;
 }
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -665,6 +689,10 @@ video {
   justify-content: flex-end;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -673,9 +701,41 @@ video {
   justify-content: space-evenly;
 }
 
-.bg-red-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-9 {
+  gap: 2.25rem;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-\[1px\] {
+  border-width: 1px;
+}
+
+.border-custom-primary-button {
+  --tw-border-opacity: 1;
+  border-color: rgb(100 255 218 / var(--tw-border-opacity));
 }
 
 .bg-custom-primary-background {
@@ -683,28 +743,85 @@ video {
   background-color: rgb(10 25 47 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-custom-primary-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 255 218 / var(--tw-bg-opacity));
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-7 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.pt-7 {
+  padding-top: 1.75rem;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
 .pl-12 {
   padding-left: 3rem;
 }
 
-.pr-12 {
-  padding-right: 3rem;
-}
-
-.pr-7 {
-  padding-right: 1.75rem;
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .pt-6 {
   padding-top: 1.5rem;
 }
 
-.pr-10 {
-  padding-right: 2.5rem;
+.pr-6 {
+  padding-right: 1.5rem;
 }
 
 .font-sans {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-xl {
@@ -712,8 +829,24 @@ video {
   line-height: 1.75rem;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
 .font-normal {
   font-weight: 400;
+}
+
+.leading-none {
+  line-height: 1;
 }
 
 .text-custom-primary-font {
@@ -721,9 +854,33 @@ video {
   color: rgb(204 214 246 / var(--tw-text-opacity));
 }
 
+.text-custom-secondary-font {
+  --tw-text-opacity: 1;
+  color: rgb(136 146 176 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-custom-primary-button {
+  --tw-text-opacity: 1;
+  color: rgb(100 255 218 / var(--tw-text-opacity));
+}
+
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-150 {
   transition-duration: 150ms;
 }
 
@@ -887,9 +1044,92 @@ video {
   }
 }
 
+/* Customize Scroll Bar ---------------------- */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(10, 25, 47);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(73 , 86 , 112);
+  border-radius: 50px;
+}
+
+/* 5 --------------- */
+
+.text-focus-in {
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2022-7-22 21:56:12
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation text-focus-in
+ * ----------------------------------------
+ */
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
 .hover\:text-custom-primary-button:hover {
   --tw-text-opacity: 1;
   color: rgb(100 255 218 / var(--tw-text-opacity));
+}
+
+.focus\:bg-custom-secondary-button:focus {
+  background-color: rgba(100,255,219,0.13);
+}
+
+.active\:bg-custom-secondary-button:active {
+  background-color: rgba(100,255,219,0.13);
+}
+
+.active\:text-custom-primary-button:active {
+  --tw-text-opacity: 1;
+  color: rgb(100 255 218 / var(--tw-text-opacity));
+}
+
+@media (min-width: 480px) {
+  .xsm\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 768px) {
@@ -900,15 +1140,111 @@ video {
   .md\:hidden {
     display: none;
   }
+
+  .md\:w-\[46\%\] {
+    width: 46%;
+  }
+
+  .md\:w-\[34\%\] {
+    width: 34%;
+  }
+
+  .md\:w-4\/5 {
+    width: 80%;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-3\/5 {
+    width: 60%;
+  }
+
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .lg\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .sm-max\:my-12 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .sm-max\:mt-8 {
+    margin-top: 2rem;
+  }
+
+  .sm-max\:h-60 {
+    height: 15rem;
+  }
+
+  .sm-max\:w-screen {
+    width: 100vw;
+  }
+
+  .sm-max\:w-60 {
+    width: 15rem;
+  }
+
+  .sm-max\:gap-3 {
+    gap: 0.75rem;
+  }
+
+  .sm-max\:gap-12 {
+    gap: 3rem;
+  }
+
+  .sm-max\:pt-5 {
+    padding-top: 1.25rem;
+  }
+
+  .sm-max\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .sm-max\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .md-max\:pl-7 {
-    padding-left: 1.75rem;
+  .md-max\:w-full {
+    width: 100%;
   }
 
-  .md-max\:pr-8 {
-    padding-right: 2rem;
+  .md-max\:justify-center {
+    justify-content: center;
+  }
+
+  .md-max\:pr-3 {
+    padding-right: 0.75rem;
+  }
+
+  .md-max\:pl-5 {
+    padding-left: 1.25rem;
   }
 
   .md-max\:text-base {

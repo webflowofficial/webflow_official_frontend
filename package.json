@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "tailwindcss": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
-    "tailwinBuild:prod":"npx tailwindcss -o build.css --minify"
+    "tailwinBuild:prod": "npx tailwindcss -o build.css --minify"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +38,8 @@
     ]
   },
   "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.12",
     "tailwindcss": "^3.1.6"
   }
 }

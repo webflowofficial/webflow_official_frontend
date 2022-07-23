@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import GlobalContext from "../context/GlobalContext";
 
 function Navbar() {
     // Font size for Mobile : 16
-    // Font size for PC : 20
+    // Font size for PC : 16 , 18
+
+    // PC px : 10 (40px)
+    // Mobilepx : 3 (12px)
+
+    // Width of section(Navbar, Home etc.) : 100vw-6px
+
+    // 1) Global States --------------------------------
+    const { scrollToAbout } = useContext(GlobalContext);
 
     // 1) Local States --------------------------------
 
@@ -23,22 +32,27 @@ function Navbar() {
     }
 
     return (
-        <nav className="flex h-20 bg-custom-primary-background items-center">
-            <div className="logo_outside_div w-1/4 box-border">
-                <div className="box-border pl-12 md-max:pl-7">
+        <nav className="box-border flex h-20 w-[calc(100vw-6px)] items-center bg-custom-primary-background px-10 sm-max:w-screen md-max:pr-3 md-max:pl-5">
+            <div className="logo_outside_div box-border w-1/4">
+                <div className="box-border">
                     <img className="w-16" src="./Images/Logo.png" alt="LOGO" />
                 </div>
             </div>
 
-            <div className="other_nav_items w-3/4 flex justify-end">
-                <div className="hidden justify-evenly w-[50%] min-w-[30rem] font-sans font-normal md:flex text-custom-primary-font">
-                    <p className="hover:text-custom-primary-button transition-all duration-200">About</p>
-                    <p className="hover:text-custom-primary-button transition-all duration-200">Experience</p>
-                    <p className="hover:text-custom-primary-button transition-all duration-200">Work</p>
-                    <p className="hover:text-custom-primary-button transition-all duration-200">Contact</p>
+            <div className="other_nav_items flex w-3/4 justify-end">
+                <div className="hidden w-[50%] min-w-[30rem] justify-evenly font-sans font-normal text-custom-primary-font md:flex">
+                    <p
+                        className="transition-all duration-200 hover:text-custom-primary-button"
+                        onClick={() => scrollToAbout.current.scrollIntoView({ behavior: "smooth" })}
+                    >
+                        About
+                    </p>
+                    <p className="transition-all duration-200 hover:text-custom-primary-button">Experience</p>
+                    <p className="transition-all duration-200 hover:text-custom-primary-button">Work</p>
+                    <p className="transition-all duration-200 hover:text-custom-primary-button">Contact</p>
                 </div>
 
-                <button className="flex box-border w-full pr-12 md-max:pr-8 justify-end md:hidden">
+                <button className="box-border flex w-full justify-end md:hidden">
                     <svg
                         width={iconHeightAndWeight}
                         height={iconHeightAndWeight}
@@ -56,11 +70,11 @@ function Navbar() {
 
                 {menuShowOrHide === "show" && (
                     <div
-                        className={`bg-custom-primary-background h-screen absolute top-0 w-3/4 ${!inAnimation && "scale-out-hor-right"} ${
+                        className={`absolute right-0 top-0 h-screen w-3/4 bg-custom-primary-background ${!inAnimation && "scale-out-hor-right"} ${
                             inAnimation && "scale-in-hor-right"
                         }`}
                     >
-                        <button className="flex box-border w-full pr-7 justify-end pt-6 mb-20">
+                        <button className="mb-20 box-border flex w-full justify-end pt-6 pr-6">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width={String(Number(iconHeightAndWeight) + 10)}
@@ -74,11 +88,11 @@ function Navbar() {
                             </svg>
                         </button>
 
-                        <div className="w-full h-1/3 flex flex-col justify-between items-center text-xl md-max:text-base text-custom-primary-font">
-                            <p className="hover:text-custom-primary-button transition-all duration-200">About</p>
-                            <p className="hover:text-custom-primary-button transition-all duration-200">Experience</p>
-                            <p className="hover:text-custom-primary-button transition-all duration-200">Work</p>
-                            <p className="hover:text-custom-primary-button transition-all duration-200">Contact</p>
+                        <div className="flex h-1/3 w-full flex-col items-center justify-between text-xl text-custom-primary-font md-max:text-base">
+                            <p className="transition-all duration-200 hover:text-custom-primary-button">About</p>
+                            <p className="transition-all duration-200 hover:text-custom-primary-button">Experience</p>
+                            <p className="transition-all duration-200 hover:text-custom-primary-button">Work</p>
+                            <p className="transition-all duration-200 hover:text-custom-primary-button">Contact</p>
                         </div>
                     </div>
                 )}

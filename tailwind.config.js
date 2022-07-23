@@ -37,7 +37,9 @@ module.exports = {
             colors: {
                 "custom-primary-background": "rgb(10,25,47)",
                 "custom-primary-button": "rgb(100,255,218)",
+                "custom-secondary-button": "rgba(100,255,219,0.13)",
                 "custom-primary-font": "rgb(204,214,246)",
+                "custom-secondary-font": "rgb(136,146,176)",
             },
         },
     },
