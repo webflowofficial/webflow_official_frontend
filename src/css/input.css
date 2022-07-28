@@ -217,3 +217,23 @@
         opacity: 1;
     }
 }
+
+
+
+/* Hide scroll bar from Experience Section */
+
+.buttons::-webkit-scrollbar { 
+    width: 0;
+    height: 0;
+}
+
+
+/*  */
+
+li::before {
+    content: "▹";
+    padding-right: 0px;
+    color: rgb(100, 255, 218);
+    left: 0px;
+    position: absolute;
+}

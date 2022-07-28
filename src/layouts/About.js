@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import MainSectionOutline from "../components/MainSectionOutline";
 import GlobalContext from "../context/GlobalContext";
 
+import SectionHeading from "./../components/SectionHeading";
+
 function About() {
     const { scrollToAbout } = useContext(GlobalContext);
 
@@ -12,7 +14,9 @@ function About() {
         // >
         <MainSectionOutline refs={scrollToAbout}>
             <div className="box-border flex w-screen flex-col gap-6 pr-3 md:w-[46%] sm-max:gap-3">
-                <p className="mb-4 text-3xl font-semibold text-custom-primary-font">About Us</p>
+                {/* <p className="mb-4 text-3xl font-semibold text-custom-primary-font">About Us</p> */}
+                {/* <p className="text-3xl font-bold leading-none text-custom-primary-font md:text-4xl lg:text-5xl">About Us</p> */}
+                <SectionHeading>About Us</SectionHeading>
                 <p className=" text-custom-secondary-font md:text-lg">
                     Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in
                     2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about

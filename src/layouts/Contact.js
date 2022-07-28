@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import MainSectionOutline from "../components/MainSectionOutline";
 
+import SectionHeading from "./../components/SectionHeading";
+
 function Contact() {
     const [contactDetails, setContactDetails] = useState({
         name_of_person: "",
@@ -27,7 +29,8 @@ function Contact() {
     return (
         <MainSectionOutline>
             <div className="flex w-screen flex-col items-center gap-8 md:w-4/5 sm-max:gap-12">
-                <p className="text-4xl font-bold leading-none text-custom-primary-font md:text-4xl lg:text-5xl sm-max:text-3xl">Get In Touch</p>
+                {/* <p className="text-4xl font-bold leading-none text-custom-primary-font md:text-4xl lg:text-5xl sm-max:text-3xl">Get In Touch</p> */}
+                <SectionHeading>Get in Touch</SectionHeading>
                 <form onSubmit={(evt) => handleSubmitContactDetails(evt)} className="form_input flex w-full flex-col items-center gap-9">
                     <div className="relative flex w-1/2 items-center justify-center md-max:w-full ">
                         <svg
