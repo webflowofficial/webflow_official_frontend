@@ -9,7 +9,7 @@ function Home() {
         //     className={`box-border flex h-[calc(100vh-80px)] w-[calc(100vw-6px)] justify-center bg-custom-primary-background px-10 pt-7 sm-max:w-screen sm-max:pt-5 md-max:pr-3 md-max:pl-5`}
         // >
         <MainSectionOutline>
-            <div className="flex w-screen flex-col gap-6 md:w-4/5 sm-max:gap-3">
+            <div className="flex w-screen flex-col gap-6 lg:w-4/5 sm-max:gap-3">
                 <p className="text-custom-primary-button">Hi, my name is</p>
                 <p className="font-bold leading-none text-custom-primary-font xsm:text-5xl md:text-6xl lg:text-7xl sm-max:text-3xl">
                     Brittany Chiang.

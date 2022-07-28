@@ -1,82 +1,85 @@
 import React, { useState } from "react";
+import ButtonForDifferExperience from "../components/ButtonForDifferExperience";
 import MainSectionOutline from "../components/MainSectionOutline";
 
 import SectionHeading from "./../components/SectionHeading";
 
 function Experience() {
+    const allButtonContentBool = {
+        1: false,
+        2: false,
+        3: false,
+        4: false,
+        5: false,
+    };
+
     const [switchButtonAndContent, setSwitchButtonAndContent] = useState({
-        Upstatement: false,
-        Scout: false,
-        Apple: false,
-        Starry: false,
-        MullenLowe: false,
+        ...allButtonContentBool,
+        1: true,
     });
 
     function handleButtonSwitching(evt, namee) {
-        setSwitchButtonAndContent((prev) => {
-            return { Upstatement: false, Scout: false, Apple: false, Starry: false, MullenLowe: false, [namee]: true };
-        });
+        setSwitchButtonAndContent({ ...allButtonContentBool, [namee]: true });
     }
 
     return (
         <MainSectionOutline>
-            <div className="flex w-full flex-col gap-8  md:w-4/5">
+            <div className="flex w-full flex-col gap-8 lg:w-4/5">
                 <div>
-                    {/* <p className="mb-4 text-3xl font-semibold text-custom-primary-font">Where I’ve Worked</p> */}
                     <SectionHeading>Where We’ve Worked</SectionHeading>
                 </div>
-                <div className="experience_section flex h-full w-full flex-col gap-4">
-                    <div className="buttons box-content flex w-full overflow-x-auto font-normal text-custom-secondary-font">
-                        <button
-                            className={`h-10 min-w-[9rem] border-custom-primary-button px-5 text-center ${
-                                switchButtonAndContent.Upstatement && "border-b-2"
-                            }`}
-                            onClick={(evt) => handleButtonSwitching(evt, "Upstatement")}
+                <div className="experience_section flex h-full w-full flex-col gap-4 md:flex-row md:gap-8">
+                    <div className="buttons box-content flex w-full overflow-x-auto font-normal text-custom-secondary-font md:w-1/4 md:flex-col">
+                        <ButtonForDifferExperience
+                            handleButtonSwitching={handleButtonSwitching}
+                            switchButtonAndContent={switchButtonAndContent}
+                            innerContent="1"
+                            minWidth={"min-w-[7rem]"}
                         >
                             Upstatement
-                        </button>
-                        <button
-                            className={`h-10 min-w-[7rem] border-custom-primary-button px-5 text-center transition-all duration-300 hover:text-custom-primary-button ${
-                                switchButtonAndContent.Scout && "border-b-2"
-                            }`}
-                            onClick={(evt) => handleButtonSwitching(evt, "Scout")}
+                        </ButtonForDifferExperience>
+                        <ButtonForDifferExperience
+                            handleButtonSwitching={handleButtonSwitching}
+                            switchButtonAndContent={switchButtonAndContent}
+                            innerContent="2"
+                            minWidth={"min-w-[6rem]"}
                         >
                             Scout
-                        </button>
-                        <button
-                            className={`h-10 min-w-[7rem] border-custom-primary-button px-5 text-center transition-all duration-300 hover:text-custom-primary-button ${
-                                switchButtonAndContent.Apple && "border-b-2"
-                            }`}
-                            onClick={(evt) => handleButtonSwitching(evt, "Apple")}
+                        </ButtonForDifferExperience>
+                        <ButtonForDifferExperience
+                            handleButtonSwitching={handleButtonSwitching}
+                            switchButtonAndContent={switchButtonAndContent}
+                            innerContent="3"
+                            minWidth={"min-w-[6rem]"}
                         >
                             Apple
-                        </button>
-                        <button
-                            className={`h-10 min-w-[7rem] border-custom-primary-button px-5 text-center transition-all duration-300 hover:text-custom-primary-button ${
-                                switchButtonAndContent.Upstatement && "border-b-2"
-                            }`}
-                            onClick={(evt) => handleButtonSwitching(evt, "Scout")}
+                        </ButtonForDifferExperience>
+                        <ButtonForDifferExperience
+                            handleButtonSwitching={handleButtonSwitching}
+                            switchButtonAndContent={switchButtonAndContent}
+                            innerContent="4"
+                            minWidth={"min-w-[6rem]"}
                         >
                             Scout
-                        </button>
-                        <button
-                            className={`h-10 min-w-[7rem] border-custom-primary-button px-5 text-center transition-all duration-300 hover:text-custom-primary-button ${
-                                switchButtonAndContent.Starry && "border-b-2"
-                            }`}
-                            onClick={(evt) => handleButtonSwitching(evt, "Starry")}
+                        </ButtonForDifferExperience>
+                        <ButtonForDifferExperience
+                            handleButtonSwitching={handleButtonSwitching}
+                            switchButtonAndContent={switchButtonAndContent}
+                            innerContent="5"
+                            minWidth={"min-w-[6rem]"}
                         >
                             Starry
-                        </button>
-                        <button
-                            className={`h-10 min-w-[7rem] border-custom-primary-button px-5 text-center transition-all duration-300 hover:text-custom-primary-button ${
-                                switchButtonAndContent.MullenLowe && "border-b-2"
-                            }`}
-                            onClick={(evt) => handleButtonSwitching(evt, "MullenLowe")}
+                        </ButtonForDifferExperience>
+                        <ButtonForDifferExperience
+                            handleButtonSwitching={handleButtonSwitching}
+                            switchButtonAndContent={switchButtonAndContent}
+                            innerContent="6"
+                            minWidth={"min-w-[7rem]"}
                         >
                             MullenLowe
-                        </button>
+                        </ButtonForDifferExperience>
                     </div>
-                    <div className="explain_for_experience flex flex-col gap-2">
+                    <div className="explain_for_experience flex flex-col gap-2 md:w-3/4 lg:w-full">
                         <p className="about_work_topic text-[20px] font-medium text-custom-primary-font">Engineer @ Upstatement</p>
                         <p className="time text-sm text-custom-secondary-font">May 2018 - Present</p>
                         <ul className="relative flex list-outside flex-col gap-3 py-5 text-custom-secondary-font">

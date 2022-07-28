@@ -13,7 +13,7 @@ function About() {
         //     className={`box-border flex min-h-[calc(100vh-80px)] w-[calc(100vw-6px)] flex-wrap justify-center overflow-x-hidden bg-custom-primary-background px-10 pt-7 sm-max:w-screen sm-max:pt-5 md-max:pr-3 md-max:pl-5`}
         // >
         <MainSectionOutline refs={scrollToAbout}>
-            <div className="box-border flex w-screen flex-col gap-6 pr-3 md:w-[46%] sm-max:gap-3">
+            <div className="box-border flex w-screen flex-col gap-6 pr-3 lg:w-[46%] sm-max:gap-3">
                 {/* <p className="mb-4 text-3xl font-semibold text-custom-primary-font">About Us</p> */}
                 {/* <p className="text-3xl font-bold leading-none text-custom-primary-font md:text-4xl lg:text-5xl">About Us</p> */}
                 <SectionHeading>About Us</SectionHeading>

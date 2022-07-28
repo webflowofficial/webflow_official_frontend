@@ -40,6 +40,7 @@ module.exports = {
                 "custom-secondary-button": "rgba(100,255,219,0.13)",
                 "custom-primary-font": "rgb(204,214,246)",
                 "custom-secondary-font": "rgb(136,146,176)",
+                "custom-hover-effect": "rgb(14,30,59)",
             },
         },
     },

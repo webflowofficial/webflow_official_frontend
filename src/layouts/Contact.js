@@ -28,7 +28,7 @@ function Contact() {
 
     return (
         <MainSectionOutline>
-            <div className="flex w-screen flex-col items-center gap-8 md:w-4/5 sm-max:gap-12">
+            <div className="flex w-screen flex-col items-center gap-8 lg:w-4/5 sm-max:gap-12">
                 {/* <p className="text-4xl font-bold leading-none text-custom-primary-font md:text-4xl lg:text-5xl sm-max:text-3xl">Get In Touch</p> */}
                 <SectionHeading>Get in Touch</SectionHeading>
                 <form onSubmit={(evt) => handleSubmitContactDetails(evt)} className="form_input flex w-full flex-col items-center gap-9">
