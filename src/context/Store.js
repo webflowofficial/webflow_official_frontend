@@ -6,8 +6,14 @@ function Store({ children }) {
     const [headerHeight, setHeaderHeight] = useState("80px");
 
     const scrollToAbout = useRef();
+    const scrollToExperience = useRef();
+    const scrollToContact = useRef();
 
-    return <GlobalContext.Provider value={{ headerHeight, setHeaderHeight, scrollToAbout }}>{children}</GlobalContext.Provider>;
+    return (
+        <GlobalContext.Provider value={{ headerHeight, setHeaderHeight, scrollToAbout, scrollToExperience, scrollToContact }}>
+            {children}
+        </GlobalContext.Provider>
+    );
 }
 
 export default Store;

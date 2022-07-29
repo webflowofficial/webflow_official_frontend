@@ -12,6 +12,8 @@ function Navbar() {
 
     // 1) Global States --------------------------------
     const { scrollToAbout } = useContext(GlobalContext);
+    const { scrollToExperience } = useContext(GlobalContext);
+    const { scrollToContact } = useContext(GlobalContext);
 
     // 1) Local States --------------------------------
 
@@ -42,14 +44,24 @@ function Navbar() {
             <div className="other_nav_items flex w-3/4 justify-end">
                 <div className="hidden w-[50%] min-w-[30rem] justify-evenly font-sans font-normal text-custom-primary-font md:flex">
                     <p
-                        className="transition-all duration-200 hover:text-custom-primary-button"
+                        className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
                         onClick={() => scrollToAbout.current.scrollIntoView({ behavior: "smooth" })}
                     >
                         About
                     </p>
-                    <p className="transition-all duration-200 hover:text-custom-primary-button">Experience</p>
-                    <p className="transition-all duration-200 hover:text-custom-primary-button">Work</p>
-                    <p className="transition-all duration-200 hover:text-custom-primary-button">Contact</p>
+                    <p
+                        className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
+                        onClick={() => scrollToExperience.current.scrollIntoView({ behavior: "smooth" })}
+                    >
+                        Experience
+                    </p>
+                    <p className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button">Work</p>
+                    <p
+                        className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
+                        onClick={() => scrollToContact.current.scrollIntoView({ behavior: "smooth" })}
+                    >
+                        Contact
+                    </p>
                 </div>
 
                 <button className="box-border flex w-full justify-end md:hidden">
@@ -89,10 +101,34 @@ function Navbar() {
                         </button>
 
                         <div className="flex h-1/3 w-full flex-col items-center justify-between text-xl text-custom-primary-font md-max:text-base">
-                            <p className="transition-all duration-200 hover:text-custom-primary-button">About</p>
-                            <p className="transition-all duration-200 hover:text-custom-primary-button">Experience</p>
+                            <p
+                                className="transition-all duration-200 hover:text-custom-primary-button"
+                                onClick={() => {
+                                    handleDisableMenu();
+                                    scrollToAbout.current.scrollIntoView({ behavior: "smooth" });
+                                }}
+                            >
+                                About
+                            </p>
+                            <p
+                                className="transition-all duration-200 hover:text-custom-primary-button"
+                                onClick={() => {
+                                    handleDisableMenu();
+                                    scrollToExperience.current.scrollIntoView({ behavior: "smooth" });
+                                }}
+                            >
+                                Experience
+                            </p>
                             <p className="transition-all duration-200 hover:text-custom-primary-button">Work</p>
-                            <p className="transition-all duration-200 hover:text-custom-primary-button">Contact</p>
+                            <p
+                                className="transition-all duration-200 hover:text-custom-primary-button"
+                                onClick={() => {
+                                    handleDisableMenu();
+                                    scrollToContact.current.scrollIntoView({ behavior: "smooth" });
+                                }}
+                            >
+                                Contact
+                            </p>
                         </div>
                     </div>
                 )}

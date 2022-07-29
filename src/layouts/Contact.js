@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import MainSectionOutline from "../components/MainSectionOutline";
+import React, { useState, useContext } from "react";
 
+import GlobalContext from "../context/GlobalContext";
+
+import MainSectionOutline from "../components/MainSectionOutline";
 import SectionHeading from "./../components/SectionHeading";
 
 function Contact() {
+    // 1) Global States --------------------------------
+    const { scrollToContact } = useContext(GlobalContext);
+
     const [contactDetails, setContactDetails] = useState({
         name_of_person: "",
         email_of_person: "",
@@ -27,7 +32,7 @@ function Contact() {
     }
 
     return (
-        <MainSectionOutline>
+        <MainSectionOutline refs={scrollToContact}>
             <div className="flex w-screen flex-col items-center gap-8 lg:w-4/5 sm-max:gap-12">
                 {/* <p className="text-4xl font-bold leading-none text-custom-primary-font md:text-4xl lg:text-5xl sm-max:text-3xl">Get In Touch</p> */}
                 <SectionHeading>Get in Touch</SectionHeading>
@@ -38,7 +43,7 @@ function Contact() {
                             width="22"
                             height="22"
                             fill="rgb(100,255,218)"
-                            className="relative right-[-36px]"
+                            className="absolute left-3"
                             viewBox="0 0 16 16"
                         >
                             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -62,7 +67,7 @@ function Contact() {
                             width="22"
                             height="22"
                             fill="rgb(100,255,218)"
-                            className="relative right-[-36px]"
+                            className="absolute left-3"
                             viewBox="0 0 16 16"
                         >
                             <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
@@ -86,7 +91,7 @@ function Contact() {
                             width="22"
                             height="22"
                             fill="rgb(100,255,218)"
-                            className="relative right-[-36px] top-[18px]"
+                            className="absolute left-3 top-[18px]"
                             viewBox="0 0 16 16"
                         >
                             <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />

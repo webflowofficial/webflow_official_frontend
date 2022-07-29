@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
 import ButtonForDifferExperience from "../components/ButtonForDifferExperience";
 import MainSectionOutline from "../components/MainSectionOutline";
+import GlobalContext from "../context/GlobalContext";
 
 import SectionHeading from "./../components/SectionHeading";
 
 function Experience() {
+    // 1) Global States --------------------------------
+    const { scrollToExperience } = useContext(GlobalContext);
+
     const allButtonContentBool = {
         1: false,
         2: false,
@@ -23,7 +28,7 @@ function Experience() {
     }
 
     return (
-        <MainSectionOutline>
+        <MainSectionOutline refs={scrollToExperience}>
             <div className="flex w-full flex-col gap-8 lg:w-4/5">
                 <div>
                     <SectionHeading>Where We’ve Worked</SectionHeading>
