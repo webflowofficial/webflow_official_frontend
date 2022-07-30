@@ -1,15 +1,16 @@
 import React, { useState, useContext } from "react";
-
-import ButtonForDifferExperience from "../components/ButtonForDifferExperience";
-import MainSectionOutline from "../components/MainSectionOutline";
 import GlobalContext from "../context/GlobalContext";
 
+// Components ----------------------------------
+import ButtonForDifferExperience from "../components/ButtonForDifferExperience";
+import MainSectionOutline from "../components/MainSectionOutline";
 import SectionHeading from "./../components/SectionHeading";
 
 function Experience() {
     // 1) Global States --------------------------------
     const { scrollToExperience } = useContext(GlobalContext);
 
+    // 2) Local States / Variables ---------------------------------
     const allButtonContentBool = {
         1: false,
         2: false,
@@ -17,12 +18,12 @@ function Experience() {
         4: false,
         5: false,
     };
-
     const [switchButtonAndContent, setSwitchButtonAndContent] = useState({
         ...allButtonContentBool,
         1: true,
     });
 
+    // Functions ----------------------------------------
     function handleButtonSwitching(evt, namee) {
         setSwitchButtonAndContent({ ...allButtonContentBool, [namee]: true });
     }

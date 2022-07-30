@@ -4,6 +4,7 @@ import Contact from "./layouts/Contact";
 import Experience from "./layouts/Experience";
 import Home from "./layouts/Home";
 import Navbar from "./layouts/Navbar";
+import Work from "./layouts/Work";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Home />
             <About />
             <Experience />
+            <Work />
             <Contact />
         </>
     );

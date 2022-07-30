@@ -3,17 +3,12 @@ import GlobalContext from "./GlobalContext";
 
 function Store({ children }) {
     // Global States -----------------------------------------
-    const [headerHeight, setHeaderHeight] = useState("80px");
-
     const scrollToAbout = useRef();
     const scrollToExperience = useRef();
     const scrollToContact = useRef();
+    const scrollToWork = useRef();
 
-    return (
-        <GlobalContext.Provider value={{ headerHeight, setHeaderHeight, scrollToAbout, scrollToExperience, scrollToContact }}>
-            {children}
-        </GlobalContext.Provider>
-    );
+    return <GlobalContext.Provider value={{ scrollToAbout, scrollToExperience, scrollToContact, scrollToWork }}>{children}</GlobalContext.Provider>;
 }
 
 export default Store;

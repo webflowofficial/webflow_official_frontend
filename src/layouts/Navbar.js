@@ -6,22 +6,19 @@ function Navbar() {
     // Font size for PC : 16 , 18
 
     // PC px : 10 (40px)
-    // Mobilepx : 3 (12px)
+    // Mobile px : 3 (12px)
 
     // Width of section(Navbar, Home etc.) : 100vw-6px
 
     // 1) Global States --------------------------------
-    const { scrollToAbout } = useContext(GlobalContext);
-    const { scrollToExperience } = useContext(GlobalContext);
-    const { scrollToContact } = useContext(GlobalContext);
+    const { scrollToAbout, scrollToExperience, scrollToContact, scrollToWork } = useContext(GlobalContext);
 
-    // 1) Local States --------------------------------
-
+    // 2) Local States ---------------------------------
     const [menuShowOrHide, setMenuShowOrHide] = useState("hide");
     const [inAnimation, setInAnimation] = useState(true);
-
     const iconHeightAndWeight = "34";
 
+    // Functions ---------------------------------------
     function handleEnableMenu() {
         setInAnimation(true);
         setMenuShowOrHide("show");
@@ -55,7 +52,12 @@ function Navbar() {
                     >
                         Experience
                     </p>
-                    <p className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button">Work</p>
+                    <p
+                        className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
+                        onClick={() => scrollToWork.current.scrollIntoView({ behavior: "smooth" })}
+                    >
+                        Work
+                    </p>
                     <p
                         className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
                         onClick={() => scrollToContact.current.scrollIntoView({ behavior: "smooth" })}
@@ -119,7 +121,15 @@ function Navbar() {
                             >
                                 Experience
                             </p>
-                            <p className="transition-all duration-200 hover:text-custom-primary-button">Work</p>
+                            <p
+                                className="transition-all duration-200 hover:text-custom-primary-button"
+                                onClick={() => {
+                                    handleDisableMenu();
+                                    scrollToWork.current.scrollIntoView({ behavior: "smooth" });
+                                }}
+                            >
+                                Work
+                            </p>
                             <p
                                 className="transition-all duration-200 hover:text-custom-primary-button"
                                 onClick={() => {

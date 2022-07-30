@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
-
 import GlobalContext from "../context/GlobalContext";
 
+// Components ----------------------------------
 import MainSectionOutline from "../components/MainSectionOutline";
 import SectionHeading from "./../components/SectionHeading";
 
@@ -9,19 +9,20 @@ function Contact() {
     // 1) Global States --------------------------------
     const { scrollToContact } = useContext(GlobalContext);
 
+    // 2) Local States ---------------------------------
     const [contactDetails, setContactDetails] = useState({
         name_of_person: "",
         email_of_person: "",
         message: "",
     });
 
+    // Functions ---------------------------------------
     function handleOnChange(evt) {
         const { name, value } = evt.target;
         setContactDetails((prev) => {
             return { ...prev, [name]: value };
         });
     }
-
     function handleSubmitContactDetails(evt) {
         evt.preventDefault();
         // Send data to API
@@ -34,7 +35,6 @@ function Contact() {
     return (
         <MainSectionOutline refs={scrollToContact}>
             <div className="flex w-screen flex-col items-center gap-8 lg:w-4/5 sm-max:gap-12">
-                {/* <p className="text-4xl font-bold leading-none text-custom-primary-font md:text-4xl lg:text-5xl sm-max:text-3xl">Get In Touch</p> */}
                 <SectionHeading>Get in Touch</SectionHeading>
                 <form onSubmit={(evt) => handleSubmitContactDetails(evt)} className="form_input flex w-full flex-col items-center gap-9">
                     <div className="relative flex w-1/2 items-center justify-center md-max:w-full ">

@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import MainSectionOutline from "../components/MainSectionOutline";
 import GlobalContext from "../context/GlobalContext";
 
+// Components ----------------------------------
+import MainSectionOutline from "../components/MainSectionOutline";
 import SectionHeading from "./../components/SectionHeading";
 
 function About() {
@@ -32,8 +33,6 @@ function About() {
                 <img className="w-80 sm-max:h-60 sm-max:w-60 " src="./Images/Complete Logo.png" alt="LOGO" />
             </div>
         </MainSectionOutline>
-
-        // </div>
     );
 }
 
