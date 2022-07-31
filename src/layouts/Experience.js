@@ -41,6 +41,7 @@ function Experience() {
                         {siteData.workedCompaniesDetails.map((singleExperience, ind) => {
                             return (
                                 <ButtonForDifferExperience
+                                    key={Math.random()}
                                     handleButtonSwitching={handleButtonSwitching}
                                     switchButtonAndContent={switchButtonAndContent}
                                     innerContent={`${ind}`}

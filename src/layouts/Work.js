@@ -24,7 +24,7 @@ function Work() {
                                 key={Math.random()}
                                 projectName={singleProject.projectName}
                                 projectDescription={singleProject.projectDescription}
-                                img={"./Images/Project1.PNG"}
+                                img={"https://www.linkpicture.com/q/Complete-Logo.png"}
                                 techUsed={singleProject.projectTechnologies}
                                 flexDirection={ind % 2 === 0 ? "flex-row" : "flex-row-reverse"}
                             />
