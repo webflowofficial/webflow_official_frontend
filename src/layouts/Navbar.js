@@ -11,7 +11,7 @@ function Navbar() {
     // Width of section(Navbar, Home etc.) : 100vw-6px
 
     // 1) Global States --------------------------------
-    const { scrollToAbout, scrollToExperience, scrollToContact, scrollToWork } = useContext(GlobalContext);
+    const { siteData, scrollToAbout, scrollToExperience, scrollToContact, scrollToWork } = useContext(GlobalContext);
 
     // 2) Local States ---------------------------------
     const [menuShowOrHide, setMenuShowOrHide] = useState("hide");
@@ -20,10 +20,13 @@ function Navbar() {
 
     // Functions ---------------------------------------
     function handleEnableMenu() {
+        document.body.style.overflow = "hidden";
         setInAnimation(true);
         setMenuShowOrHide("show");
     }
     function handleDisableMenu() {
+        document.body.style.overflow = "visible";
+
         setInAnimation(false);
         setTimeout(() => {
             setMenuShowOrHide("hide");
@@ -44,25 +47,25 @@ function Navbar() {
                         className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
                         onClick={() => scrollToAbout.current.scrollIntoView({ behavior: "smooth" })}
                     >
-                        About
+                        {siteData.navBarItems[0]}
                     </p>
                     <p
                         className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
                         onClick={() => scrollToExperience.current.scrollIntoView({ behavior: "smooth" })}
                     >
-                        Experience
+                        {siteData.navBarItems[1]}
                     </p>
                     <p
                         className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
                         onClick={() => scrollToWork.current.scrollIntoView({ behavior: "smooth" })}
                     >
-                        Work
+                        {siteData.navBarItems[2]}
                     </p>
                     <p
                         className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
                         onClick={() => scrollToContact.current.scrollIntoView({ behavior: "smooth" })}
                     >
-                        Contact
+                        {siteData.navBarItems[3]}
                     </p>
                 </div>
 
@@ -84,9 +87,9 @@ function Navbar() {
 
                 {menuShowOrHide === "show" && (
                     <div
-                        className={`absolute right-0 top-0 h-screen w-3/4 bg-custom-primary-background ${!inAnimation && "scale-out-hor-right"} ${
-                            inAnimation && "scale-in-hor-right"
-                        }`}
+                        className={`menu_for_mobile fixed right-0 top-0 h-screen w-3/4 bg-custom-primary-background ${
+                            !inAnimation && "scale-out-hor-right"
+                        } ${inAnimation && "scale-in-hor-right"}`}
                     >
                         <button className="mb-20 box-border flex w-full justify-end pt-6 pr-6">
                             <svg
@@ -104,40 +107,40 @@ function Navbar() {
 
                         <div className="flex h-1/3 w-full flex-col items-center justify-between text-xl text-custom-primary-font md-max:text-base">
                             <p
-                                className="transition-all duration-200 hover:text-custom-primary-button"
+                                className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
                                 onClick={() => {
                                     handleDisableMenu();
                                     scrollToAbout.current.scrollIntoView({ behavior: "smooth" });
                                 }}
                             >
-                                About
+                                {siteData.navBarItems[0]}
                             </p>
                             <p
-                                className="transition-all duration-200 hover:text-custom-primary-button"
+                                className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
                                 onClick={() => {
                                     handleDisableMenu();
                                     scrollToExperience.current.scrollIntoView({ behavior: "smooth" });
                                 }}
                             >
-                                Experience
+                                {siteData.navBarItems[1]}
                             </p>
                             <p
-                                className="transition-all duration-200 hover:text-custom-primary-button"
+                                className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
                                 onClick={() => {
                                     handleDisableMenu();
                                     scrollToWork.current.scrollIntoView({ behavior: "smooth" });
                                 }}
                             >
-                                Work
+                                {siteData.navBarItems[2]}
                             </p>
                             <p
-                                className="transition-all duration-200 hover:text-custom-primary-button"
+                                className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
                                 onClick={() => {
                                     handleDisableMenu();
                                     scrollToContact.current.scrollIntoView({ behavior: "smooth" });
                                 }}
                             >
-                                Contact
+                                {siteData.navBarItems[3]}
                             </p>
                         </div>
                     </div>

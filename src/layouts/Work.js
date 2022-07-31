@@ -8,7 +8,7 @@ import SectionHeading from "./../components/SectionHeading";
 
 function Work() {
     // 1) Global States --------------------------------
-    const { scrollToWork } = useContext(GlobalContext);
+    const { siteData, scrollToWork } = useContext(GlobalContext);
 
     return (
         <MainSectionOutline refs={scrollToWork}>
@@ -18,30 +18,18 @@ function Work() {
                 </div>
 
                 <div className="projects flex flex-col gap-14">
-                    <SingleProject
-                        projectName={"Spotify Profile"}
-                        projectDescription={
-                            "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
-                        }
-                        img={"./Images/Project1.PNG"}
-                        techUsed={["React", "Nodejs", "MongoDB"]}
-                    />
-                    <SingleProject
-                        projectName={"Spotify Profile"}
-                        projectDescription={
-                            "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
-                        }
-                        img={"./Images/Project1.PNG"}
-                        techUsed={["React", "Nodejs", "MongoDB"]}
-                    />
-                    <SingleProject
-                        projectName={"Spotify Profile"}
-                        projectDescription={
-                            "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
-                        }
-                        img={"./Images/Project1.PNG"}
-                        techUsed={["React", "Nodejs", "MongoDB"]}
-                    />
+                    {siteData.featuredProjectsDetails.map((singleProject, ind) => {
+                        return (
+                            <SingleProject
+                                key={Math.random()}
+                                projectName={singleProject.projectName}
+                                projectDescription={singleProject.projectDescription}
+                                img={"./Images/Project1.PNG"}
+                                techUsed={singleProject.projectTechnologies}
+                                flexDirection={ind % 2 === 0 ? "flex-row" : "flex-row-reverse"}
+                            />
+                        );
+                    })}
                 </div>
             </div>
         </MainSectionOutline>

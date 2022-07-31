@@ -8,24 +8,26 @@ import SectionHeading from "./../components/SectionHeading";
 
 function Experience() {
     // 1) Global States --------------------------------
-    const { scrollToExperience } = useContext(GlobalContext);
+    const { siteData, scrollToExperience } = useContext(GlobalContext);
 
     // 2) Local States / Variables ---------------------------------
     const allButtonContentBool = {
+        0: false,
         1: false,
         2: false,
         3: false,
         4: false,
-        5: false,
     };
     const [switchButtonAndContent, setSwitchButtonAndContent] = useState({
         ...allButtonContentBool,
-        1: true,
+        0: true,
     });
+    const [contentToShowByIndex, setContentToShowByIndex] = useState(0);
 
     // Functions ----------------------------------------
-    function handleButtonSwitching(evt, namee) {
-        setSwitchButtonAndContent({ ...allButtonContentBool, [namee]: true });
+    function handleButtonSwitching(evt, indexNumber) {
+        setContentToShowByIndex(indexNumber);
+        setSwitchButtonAndContent({ ...allButtonContentBool, [indexNumber]: true });
     }
 
     return (
@@ -36,67 +38,37 @@ function Experience() {
                 </div>
                 <div className="experience_section flex h-full w-full flex-col gap-4 md:flex-row md:gap-8">
                     <div className="buttons box-content flex w-full overflow-x-auto font-normal text-custom-secondary-font md:w-1/4 md:flex-col">
-                        <ButtonForDifferExperience
-                            handleButtonSwitching={handleButtonSwitching}
-                            switchButtonAndContent={switchButtonAndContent}
-                            innerContent="1"
-                            minWidth={"min-w-[7rem]"}
-                        >
-                            Upstatement
-                        </ButtonForDifferExperience>
-                        <ButtonForDifferExperience
-                            handleButtonSwitching={handleButtonSwitching}
-                            switchButtonAndContent={switchButtonAndContent}
-                            innerContent="2"
-                            minWidth={"min-w-[6rem]"}
-                        >
-                            Scout
-                        </ButtonForDifferExperience>
-                        <ButtonForDifferExperience
-                            handleButtonSwitching={handleButtonSwitching}
-                            switchButtonAndContent={switchButtonAndContent}
-                            innerContent="3"
-                            minWidth={"min-w-[6rem]"}
-                        >
-                            Apple
-                        </ButtonForDifferExperience>
-                        <ButtonForDifferExperience
-                            handleButtonSwitching={handleButtonSwitching}
-                            switchButtonAndContent={switchButtonAndContent}
-                            innerContent="4"
-                            minWidth={"min-w-[6rem]"}
-                        >
-                            Scout
-                        </ButtonForDifferExperience>
-                        <ButtonForDifferExperience
-                            handleButtonSwitching={handleButtonSwitching}
-                            switchButtonAndContent={switchButtonAndContent}
-                            innerContent="5"
-                            minWidth={"min-w-[6rem]"}
-                        >
-                            Starry
-                        </ButtonForDifferExperience>
-                        <ButtonForDifferExperience
-                            handleButtonSwitching={handleButtonSwitching}
-                            switchButtonAndContent={switchButtonAndContent}
-                            innerContent="6"
-                            minWidth={"min-w-[7rem]"}
-                        >
-                            MullenLowe
-                        </ButtonForDifferExperience>
+                        {siteData.workedCompaniesDetails.map((singleExperience, ind) => {
+                            return (
+                                <ButtonForDifferExperience
+                                    handleButtonSwitching={handleButtonSwitching}
+                                    switchButtonAndContent={switchButtonAndContent}
+                                    innerContent={`${ind}`}
+                                    minWidth={"min-w-[7rem]"}
+                                >
+                                    {singleExperience.companyName}
+                                </ButtonForDifferExperience>
+                            );
+                        })}
                     </div>
                     <div className="explain_for_experience flex flex-col gap-2 md:w-3/4 lg:w-full">
-                        <p className="about_work_topic text-[20px] font-medium text-custom-primary-font">Engineer @ Upstatement</p>
-                        <p className="time text-sm text-custom-secondary-font">May 2018 - Present</p>
+                        <p className="about_work_topic text-[20px] font-medium text-custom-primary-font">
+                            {siteData.workedCompaniesDetails[contentToShowByIndex].projectName}
+                        </p>
+                        <p className="role text-base font-medium text-custom-secondary-font">
+                            {siteData.workedCompaniesDetails[contentToShowByIndex].role}
+                        </p>
+                        <p className="time text-base text-custom-secondary-font">
+                            {siteData.workedCompaniesDetails[contentToShowByIndex].timePeriod}
+                        </p>
                         <ul className="relative flex list-outside flex-col gap-3 py-5 text-custom-secondary-font">
-                            <li className="pl-5">Write modern, performant, maintainable code for a diverse array of client and internal projects</li>
-                            <li className="pl-5">
-                                Work with a variety of different languages, platforms, frameworks, and content management systems such as JavaScript,
-                                TypeScript, Gatsby, React, Craft, WordPress, Prismic, and Netlify
-                            </li>
-                            <li className="pl-5">
-                                Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis
-                            </li>
+                            {siteData.workedCompaniesDetails[contentToShowByIndex].details.map((detail) => {
+                                return (
+                                    <li key={Math.random()} className="pl-5">
+                                        {detail}
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
                 </div>

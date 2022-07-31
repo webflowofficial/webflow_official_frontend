@@ -1,11 +1,15 @@
 import React from "react";
 
-function SingleProject({ img, projectName, projectDescription, techUsed }) {
+function SingleProject({ img, projectName, projectDescription, techUsed, flexDirection }) {
     return (
-        <div className="single_project relative box-border flex h-auto w-full flex-col rounded-sm border border-custom-secondary-font py-5 px-3 shadow-primary-box shadow-custom-primary-font md:flex-row md:items-center md:gap-4 md:px-5">
+        <div
+            className={`single_project relative box-border flex h-auto w-full flex-col rounded-sm border border-custom-secondary-font py-5 px-3 shadow-primary-box shadow-custom-primary-font md:${
+                flexDirection === "flex-row" ? "flex-row" : "flex-row-reverse"
+            } md:items-center md:gap-4 md:px-5`}
+        >
             <img className="h-48 rounded-sm opacity-80 md:h-auto md:w-1/2" src={img} alt="" />
 
-            <div className="flex flex-col gap-5 px-4 pt-4">
+            <div className="flex flex-col gap-5 px-4 pt-4 md:w-1/2">
                 <p className="project_name text-2xl font-bold leading-none text-custom-primary-font">{projectName}</p>
                 <p className="text-sm font-medium text-custom-secondary-font md:text-base">{projectDescription}</p>
                 <ul className="flex list-none flex-wrap gap-3 text-base font-medium text-custom-secondary-font md:gap-y-1 md:gap-x-5">
