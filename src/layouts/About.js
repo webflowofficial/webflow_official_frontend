@@ -13,7 +13,7 @@ function About() {
         <MainSectionOutline refs={scrollToAbout}>
             <div className="box-border flex w-screen flex-col gap-6 pr-3 lg:w-[46%] sm-max:gap-3">
                 <SectionHeading>About Us</SectionHeading>
-                <p className=" text-custom-secondary-font md:text-lg">
+                <p className=" whitespace-pre-wrap text-custom-secondary-font md:text-lg">
                     {`${siteData.aboutUsText.split(":")[0]} \n ${siteData.aboutUsText.split(":")[1]}`}
                 </p>
                 {/* <p className=" text-custom-secondary-font md:text-lg">

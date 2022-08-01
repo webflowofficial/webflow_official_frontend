@@ -19,14 +19,17 @@ function Work() {
 
                 <div className="projects flex flex-col gap-14">
                     {siteData.featuredProjectsDetails.map((singleProject, ind) => {
+                        let direction = ind % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse";
                         return (
                             <SingleProject
                                 key={Math.random()}
                                 projectName={singleProject.projectName}
                                 projectDescription={singleProject.projectDescription}
-                                img={"https://www.linkpicture.com/q/Complete-Logo.png"}
+                                img={singleProject.projectPicture || "https://www.linkpicture.com/q/Complete-Logo.png"}
                                 techUsed={singleProject.projectTechnologies}
-                                flexDirection={ind % 2 === 0 ? "flex-row" : "flex-row-reverse"}
+                                flexDirection={direction}
+                                projectGithub={singleProject.projectGithub}
+                                projectLink={singleProject.projectLink}
                             />
                         );
                     })}

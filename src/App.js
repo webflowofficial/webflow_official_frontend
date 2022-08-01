@@ -19,6 +19,7 @@ function App() {
 
     async function handleFetchSiteData() {
         const res = await fetchSiteData();
+        console.log(res.data);
         setSiteData(res?.data);
         setStartingAnimation(false);
     }

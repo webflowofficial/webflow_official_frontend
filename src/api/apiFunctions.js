@@ -9,4 +9,13 @@ async function fetchSiteData() {
     return response;
 }
 
-export { fetchSiteData };
+async function postContactInformation(contactInformation) {
+    const response = await axios.post(`/contact`, contactInformation, {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    return response;
+}
+
+export { fetchSiteData, postContactInformation };

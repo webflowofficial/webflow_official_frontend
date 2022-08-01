@@ -1,9 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import GlobalContext from "../context/GlobalContext";
 
 // Components ----------------------------------
 import MainSectionOutline from "../components/MainSectionOutline";
 import SectionHeading from "./../components/SectionHeading";
+
+import { postContactInformation } from "./../api/apiFunctions";
 
 function Contact() {
     // 1) Global States --------------------------------
@@ -17,18 +19,29 @@ function Contact() {
     });
 
     // Functions ---------------------------------------
+    async function handlePostContactInfo() {
+        const response = await postContactInformation({
+            name: contactDetails.name_of_person,
+            email: contactDetails.email_of_person,
+            message: contactDetails.message,
+        });
+        return response;
+    }
+
+    // Functions ---------------------------------------
     function handleOnChange(evt) {
         const { name, value } = evt.target;
         setContactDetails((prev) => {
             return { ...prev, [name]: value };
         });
     }
-    function handleSubmitContactDetails(evt) {
+    async function handleSubmitContactDetails(evt) {
         evt.preventDefault();
         // Send data to API
         if (contactDetails.name_of_person !== " " && contactDetails.email_of_person !== "" && contactDetails.message !== "") {
-            console.log(contactDetails);
-            setContactDetails({ name_of_person: "", email_of_person: "", message: "" });
+            const response = await handlePostContactInfo();
+            console.log(response?.data?.status);
+            if (response?.data?.status === "success") setContactDetails({ name_of_person: "", email_of_person: "", message: "" });
         }
     }
 
