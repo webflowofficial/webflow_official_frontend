@@ -21,7 +21,7 @@ function Home() {
                 <p className="text-lg text-custom-secondary-font lg:w-3/5 sm-max:text-base">{siteData.brandDescription}</p>
                 <div>
                     <button
-                        className="mt-4 rounded border-[1px] border-custom-primary-button p-4 px-6 text-custom-primary-button transition-all duration-300 hover:bg-custom-secondary-button sm-max:mt-8"
+                        className="mt-10 rounded border-[1px] border-custom-primary-button p-4 px-6 text-custom-primary-button transition-all duration-300 hover:bg-custom-secondary-button sm-max:mt-8"
                         onClick={() => scrollToWork.current.scrollIntoView({ behavior: "smooth" })}
                     >
                         {siteData.brandButton}

@@ -44,25 +44,25 @@ function Navbar() {
             <div className="other_nav_items flex w-3/4 justify-end">
                 <div className="hidden w-[50%] min-w-[30rem] justify-evenly font-sans font-normal text-custom-primary-font md:flex">
                     <p
-                        className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
+                        className="cursor-pointer font-semibold transition-all duration-200 hover:text-custom-primary-button"
                         onClick={() => scrollToAbout.current.scrollIntoView({ behavior: "smooth" })}
                     >
                         {siteData.navBarItems[0]}
                     </p>
                     <p
-                        className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
+                        className="cursor-pointer font-semibold transition-all duration-200 hover:text-custom-primary-button"
                         onClick={() => scrollToExperience.current.scrollIntoView({ behavior: "smooth" })}
                     >
                         {siteData.navBarItems[1]}
                     </p>
                     <p
-                        className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
+                        className="cursor-pointer font-semibold transition-all duration-200 hover:text-custom-primary-button"
                         onClick={() => scrollToWork.current.scrollIntoView({ behavior: "smooth" })}
                     >
                         {siteData.navBarItems[2]}
                     </p>
                     <p
-                        className="cursor-pointer transition-all duration-200 hover:text-custom-primary-button"
+                        className="cursor-pointer font-semibold transition-all duration-200 hover:text-custom-primary-button"
                         onClick={() => scrollToContact.current.scrollIntoView({ behavior: "smooth" })}
                     >
                         {siteData.navBarItems[3]}

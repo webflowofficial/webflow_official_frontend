@@ -124,7 +124,7 @@ function Contact() {
                     </div>
 
                     <div className="relative flex w-1/2 justify-end md-max:w-full">
-                        <button className="box-border rounded-md border border-custom-primary-button bg-custom-primary-button px-7 py-1 text-lg font-medium text-black transition-all duration-150 active:bg-custom-secondary-button active:text-custom-primary-button">
+                        <button className="box-border rounded-md border border-custom-primary-button bg-custom-primary-button px-7 py-1 text-lg font-medium text-black transition-all duration-300 hover:bg-custom-secondary-button hover:text-custom-primary-button">
                             Submit
                         </button>
                     </div>

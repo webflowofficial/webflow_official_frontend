@@ -581,6 +581,11 @@ video {
   top: 0px;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -589,12 +594,24 @@ video {
   margin-bottom: 5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
 
 .box-content {
   box-sizing: content-box;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -645,6 +662,10 @@ video {
   height: 33.333333%;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .min-h-\[calc\(100vh\)\] {
   min-height: calc(100vh);
 }
@@ -689,12 +710,33 @@ video {
   width: 50%;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .min-w-\[7rem\] {
   min-width: 7rem;
 }
 
 .min-w-\[30rem\] {
   min-width: 30rem;
+}
+
+@-webkit-keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .cursor-pointer {
@@ -805,6 +847,10 @@ video {
   border-radius: 0.25rem;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .border {
   border-width: 1px;
 }
@@ -832,6 +878,11 @@ video {
   border-color: rgb(136 146 176 / var(--tw-border-opacity));
 }
 
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .bg-custom-primary-background {
   --tw-bg-opacity: 1;
   background-color: rgb(10 25 47 / var(--tw-bg-opacity));
@@ -846,8 +897,17 @@ video {
   background-color: rgb(100 255 218 / var(--tw-bg-opacity));
 }
 
+.bg-teal-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(45 212 191 / var(--tw-bg-opacity));
+}
+
 .p-4 {
   padding: 1rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-1 {
@@ -981,6 +1041,10 @@ video {
   font-weight: 400;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -1003,6 +1067,11 @@ video {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .opacity-80 {
@@ -1035,12 +1104,12 @@ video {
   transition-duration: 300ms;
 }
 
-.duration-150 {
-  transition-duration: 150ms;
-}
-
 .duration-200 {
   transition-duration: 200ms;
+}
+
+.duration-150 {
+  transition-duration: 150ms;
 }
 
 /* 1 ------------------------------------------ */

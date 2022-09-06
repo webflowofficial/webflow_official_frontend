@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import GlobalContext from "./context/GlobalContext";
 
-// Components ------------------------------------
+// Components -------------------------------------------------------------------------
 import MainSectionOutline from "./components/MainSectionOutline";
 import About from "./layouts/About";
 import Contact from "./layouts/Contact";
@@ -14,14 +14,16 @@ import Footer from "./layouts/Footer";
 import { fetchSiteData } from "./api/apiFunctions";
 
 function App() {
+    // Global States ---------------------------------------------------------------------
     const { setSiteData } = useContext(GlobalContext);
+
+    // Local States ---------------------------------------------------------------------
     const [startingAnimation, setStartingAnimation] = useState(true);
 
     async function handleFetchSiteData() {
-        const res = await fetchSiteData();
-        console.log(res.data);
-        setSiteData(res?.data);
+        const response = await fetchSiteData();
         setStartingAnimation(false);
+        setSiteData(response?.data);
     }
 
     useEffect(() => {
@@ -32,7 +34,7 @@ function App() {
         <>
             {startingAnimation && (
                 <MainSectionOutline>
-                    <div className=" flex h-screen w-screen items-center justify-center overflow-hidden">
+                    <div className="flex h-screen w-screen items-center justify-center overflow-hidden">
                         <img className="start_animation h-48 w-48" src="./Images/Complete Logo.png" alt="" />
                     </div>
                 </MainSectionOutline>
